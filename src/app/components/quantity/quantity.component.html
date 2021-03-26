@@ -1,0 +1,6 @@
+
+<select name="qty" id="" [(ngModel)]='count' (ngModelChange)='onChosenQty(count)'>
+    <option [value]="i+1" *ngFor='let qty of countArr(countInStock); let i = index' [attr.selected]='i==0 ? true : null'>
+        {{i+1}}
+    </option>
+</select>

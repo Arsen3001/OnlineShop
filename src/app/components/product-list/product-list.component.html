@@ -1,0 +1,8 @@
+<mat-spinner *ngIf='loader' color='primary'></mat-spinner>
+<div class="not-spinner" *ngIf='!loader'>
+<h2>LATEST PRODUCTS</h2>
+<div class="wrapper">
+<app-product-card  [product]='product' *ngFor='let product of productsList'></app-product-card>
+</div>
+<app-pages [pages]='pages' (pageNumber)='pageNumber($event)'></app-pages>
+</div>

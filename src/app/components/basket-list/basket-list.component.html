@@ -1,0 +1,7 @@
+<app-message [messages]='["Your cart is empty", "Go Back"]' link='/' *ngIf='!products || products.length ===0'></app-message>
+<table>
+    <thead></thead>
+    <tbody>
+        <app-item-product-list *ngFor='let item of products; let i = index' [item]='item' [index]='i' (deleteItem)='deleteItem($event)'></app-item-product-list>
+    </tbody>
+</table>

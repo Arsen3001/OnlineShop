@@ -1,0 +1,11 @@
+<tr>
+    <div class="wrapper">
+    <td> <img src="{{mainLink}}{{item.product.image}}" alt=""> </td>
+    <td class="name">{{item.product.name}}</td>
+    <td class="price">${{item.product.price}}</td>
+    <td><app-quantity [countInStock]='item.product.countInStock' [count]='item.quantity' (chosenQty)='chosenQty($event, item.product)'></app-quantity></td>
+    <td><span class="material-icons" (click)='deleteFromCart(index)'>
+        delete
+        </span></td>
+    </div>
+</tr>

@@ -1,0 +1,37 @@
+<button routerLink="/">GO BACK</button>
+<div class="product">
+    <img src="{{mainLink}}{{product.image}}" alt="ss">
+    <div class="column">
+        <div class="info">
+            <h3>{{product.name | uppercase}}</h3>
+        </div>
+        <div class="info">
+            <span>{{product.numReviews}} reviews</span>
+        </div>
+        <div class="info">
+            Price: ${{product.price}}
+        </div>
+        <div class="info">
+            Description: {{product.description}}
+        </div>
+    </div>
+    <div class="column">
+        <div class="bord">Price:
+            <p>${{product.price}}</p>
+        </div>
+        <div class="bord">Status:
+            <p><span *ngIf='product.countInStock > 0; else outOf'>In stock</span>
+                <ng-template #outOf>Out Of Stock</ng-template>
+            </p>
+        </div>
+        <div class="bord" *ngIf='product.countInStock > 0;'>
+            Qty <p>
+               <app-quantity [countInStock]='product.countInStock' [count]='count' (chosenQty)='chosenQty($event)'></app-quantity>
+            </p>
+        </div>
+        <div class="bord">
+            <button routerLink='/basket' class="btn btn-outline-success addCart" (click)='addToCart()'>ADD TO CART</button>
+        </div>
+    </div>
+</div>
+<app-review [product]='product'></app-review>

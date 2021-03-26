@@ -1,0 +1,19 @@
+<div class="review" *ngIf="product.reviews">
+    <h1>REVIEWS</h1>
+    <app-message *ngIf='product.reviews.length==0' [messages]='["No Reviews"]'></app-message>
+    <div class="info-revier" *ngFor='let revier of product.reviews'>
+        {{revier.name}}
+        <br>
+        <br>
+        {{revier.updatedAt | slice:0:10}}
+        <br>
+        <br>
+        <p>
+            {{revier.comment}}
+        </p>
+    </div>
+    <div class="info-revier">
+        <h1>WRITE A CUSTOMER REVIEW</h1>
+        <app-message [messages]='["Please","sign in","to write a review"]' link='/sign'></app-message>
+    </div>
+</div>
