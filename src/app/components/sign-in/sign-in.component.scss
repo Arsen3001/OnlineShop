@@ -3,3 +3,27 @@
   margin: auto;
   padding-top: 30px;
 }
+
+.addCart {
+  width: 20%;
+  min-height: 40px;
+  border-radius: 0;
+  margin: auto;
+  background-color: #1A1A1A;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.addCart:active {
+  border: 2px solid black;
+}
+
+.pass {
+  margin-top: 10px;
+}
+
+input:focus {
+  border: 2px solid grey;
+}

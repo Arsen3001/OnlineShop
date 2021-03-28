@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IPage, ShopInterfaces } from 'src/app/interfaces/shop-interfaces';
 import { ShopServiceService } from 'src/app/services/shop-services.service';
 
@@ -10,26 +11,15 @@ import { ShopServiceService } from 'src/app/services/shop-services.service';
 })
 export class SearchComponent implements OnInit {
   products: ShopInterfaces[] = [];
-  currentPage = this.shopService.pageNum;
-  pages = 0;
-  constructor(private shopService: ShopServiceService, private http: HttpClient) { }
+  loader = true;
+  constructor(private shopService: ShopServiceService, private activatedRoute: ActivatedRoute ) { }
 
   ngOnInit(): void {
-this.getProducts();
-  }
-
-  getProducts(): void {
-    this.shopService.searchSubject.subscribe((res: any) => {
-    this.products = res.products;
-    this.pages = res.pages;
+    this.activatedRoute.params.subscribe((searchWord: any) => {
+      this.shopService.searchProduct(searchWord.keyword).subscribe ((res: IPage) => {
+        this.products = res.products;
+        this.loader = false;
+      });
     });
   }
-
-  pageNumber(i: number): void {
-    this.currentPage = i;
-    this.shopService.setPageNum(i);
-    this.shopService.searchProduct().subscribe((res: ShopInterfaces[]) => {
-    this.shopService.searchSubject.next(res);
-    }
-    )};
 }

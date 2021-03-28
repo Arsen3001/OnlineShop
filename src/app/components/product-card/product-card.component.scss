@@ -1,11 +1,11 @@
 .product-card {
   border: 1px solid lightgray;
-  margin-bottom: 20px;
-  padding-bottom: 50px;
+  margin: 0 15px 20px 15px;
+  padding: 15px;
 }
 
 .product-card img {
-  width: 250px;
+  width: 100%;
 }
 
 .reviews {
@@ -18,67 +18,17 @@
   font-size: 20px;
 }
 
-.name {
-  margin-bottom: 30px;
-}
-
-
-
 .product-info {
-  width: 250px;
-  padding: auto;
-  text-align: center;
   font-family: 'Nunito Sans', sans-serif;
-
+  padding: 15px;
 }
 
-
-.rating-area {
-  overflow: hidden;
-  width: 265px;
-  margin: auto;
+.name {
+  font-size: 16px;
 }
 
-.rating-area:not(:checked)>input {
-  display: none;
-}
-
-.rating-area:not(:checked)>label {
-  float: right;
-  width: 25px;
-  padding: 0;
-  cursor: pointer;
-  font-size: 28px;
-  line-height: 32px;
-  color: lightgrey;
-  text-shadow: 1px 1px #bbb;
-}
-
-.rating-area:not(:checked)>label:before {
-  content: '★';
-}
-
-.rating-area>input:checked~label {
-  color: gold;
-  /*    text-shadow: 1px 1px #c60;*/
-}
-
-.rating-area:not(:checked)>label:hover,
-.rating-area:not(:checked)>label:hover~label {
-  color: gold;
-}
-
-.rating-area>input:checked+label:hover,
-.rating-area>input:checked+label:hover~label,
-.rating-area>input:checked~label:hover,
-.rating-area>input:checked~label:hover~label,
-.rating-area>label:hover~input:checked~label {
-  color: gold;
-  /*    text-shadow: 1px 1px goldenrod;*/
-}
-
-.rate-area>label:active {
-  position: relative;
+.name:hover {
+  text-decoration: underline;
 }
 
 a {
@@ -89,8 +39,6 @@ a:hover {
   text-decoration: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300;1,400;1,600;1,700&display=swap');
 
-// p {
-//   font-family: 'Nunito Sans', sans-serif !important;
-// }
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300;1,400;1,600;1,700&display=swap');

@@ -9,6 +9,11 @@ button {
   cursor: pointer;
 }
 
+button[disabled] {
+  background-color: grey;
+  cursor: default;
+}
+
 .subtotal {
   border: 1px solid lightgray;
   padding: 20px;

@@ -11,20 +11,19 @@ import { ShopServiceService } from 'src/app/services/shop-services.service';
 export class ItemProductListComponent implements OnInit {
   @Input () item = {} as IBasketList;
   @Input () index = 0;
-  @Output () deleteItem = new EventEmitter;
+  @Output () deleteItem = new EventEmitter();
   mainLink = this.shopService.mainLink;
 
-  
-  constructor(private basketService: BasketService, private shopService: ShopServiceService) { }
+  constructor(private basketService: BasketService, private shopService: ShopServiceService) {}
 
   ngOnInit(): void {
   }
 
-  deleteFromCart(i:number):void {
+  deleteFromCart(i: number): void {
     this.deleteItem.emit(i);
   }
 
-  chosenQty(i:number, product:ShopInterfaces) :void {
+  chosenQty(i: number, product: ShopInterfaces): void {
     this.basketService.addBasketProduct(product, i);
   }
 

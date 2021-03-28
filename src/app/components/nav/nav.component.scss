@@ -1,21 +1,25 @@
 .wrapper {
   display: flex;
-
+  font-weight: 200;
 }
 
 .material-icons {
-  size: 10px;
+  font-size: 18px;
   color: #a8a899;
 }
 
+
 a {
   color: #a8a899;
-
+  display: flex;
 }
 
 a:hover {
   text-decoration: none;
+  color: white;
 }
+
+
 
 .cart {
   margin-right: 20px;
@@ -24,4 +28,8 @@ a:hover {
 .center {
   display: flex;
   align-items: center;
+}
+
+.nav-item {
+  font-weight: 500;
 }

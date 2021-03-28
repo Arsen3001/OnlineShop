@@ -5,6 +5,9 @@
         {{revier.name}}
         <br>
         <br>
+        <app-stars-review [product]='product'></app-stars-review>   
+        <br>
+        <br> 
         {{revier.updatedAt | slice:0:10}}
         <br>
         <br>
@@ -13,7 +16,7 @@
         </p>
     </div>
     <div class="info-revier">
-        <h1>WRITE A CUSTOMER REVIEW</h1>
+        <h1 class="write-review">WRITE A CUSTOMER REVIEW</h1>
         <app-message [messages]='["Please","sign in","to write a review"]' link='/sign'></app-message>
     </div>
 </div>

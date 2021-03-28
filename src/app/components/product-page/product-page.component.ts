@@ -18,13 +18,15 @@ export class ProductPageComponent implements OnInit {
   mainLink = 'https://nodejs-final-mysql.herokuapp.com';
   product = {} as ShopInterfaces;
   count = 1;
-  constructor(private activatedRoute: ActivatedRoute, private shopService: ShopServiceService, private basketService: BasketService ) { 
+  loader = true;
+  constructor(private activatedRoute: ActivatedRoute, private shopService: ShopServiceService, private basketService: BasketService) {
     this.id = activatedRoute.snapshot.params[this.productId];
   }
 
   ngOnInit(): void {
     this.shopService.getProductById(this.id).subscribe((res: ShopInterfaces ) => {
       this.product = res;
+      this.loader = false;
     });
   }
 
@@ -32,8 +34,8 @@ export class ProductPageComponent implements OnInit {
     this.basketService.addBasketProduct(this.product, this.count);
   }
 
-chosenQty(i: number): void {
-  this.count = i;
-}
+  chosenQty(i: number): void {
+    this.count = i;
+  }
 
 }

@@ -1,11 +1,15 @@
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   font-family: 'Nunito Sans', sans-serif;
   color: black;
+  margin: 0 -15px;
 }
 
+app-product-card {
+  max-width: 25%;
+  font-family: 'Nunito Sans', sans-serif;
+}
 
 mat-spinner {
   margin-top: 60px;

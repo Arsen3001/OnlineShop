@@ -13,19 +13,19 @@ productsList: ShopInterfaces[] = [];
 pages = 0;
 currentPage = 1;
 loader = true;
-  constructor (private http: HttpClient, private shopService: ShopServiceService) {}
+  constructor(private shopService: ShopServiceService) {}
 
   ngOnInit(): void {
-    this.getProducts();
+    this.getProducts(this.currentPage);
   }
 
   pageNumber(i: number): void {
     this.currentPage = i;
-    this.getProducts();
+    this.getProducts(i);
   }
 
-  getProducts(): void {
-    this.shopService.getProduct().subscribe((res: IPage) => {
+  getProducts(i: number): void {
+    this.shopService.getProduct(i).subscribe((res: IPage) => {
       this.productsList = res.products;
       this.pages = res.pages;
       this.loader = false;

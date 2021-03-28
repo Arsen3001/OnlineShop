@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IBasketList, ShopInterfaces } from 'src/app/interfaces/shop-interfaces';
+import { IBasketList } from 'src/app/interfaces/shop-interfaces';
 import { BasketService } from 'src/app/services/basket.service';
 import { ShopServiceService } from 'src/app/services/shop-services.service';
 

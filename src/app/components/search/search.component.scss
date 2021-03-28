@@ -1,7 +1,30 @@
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  //   margin: auto;
-  //   width: 80%;
+  color: black;
+  margin: 0 -15px;
+}
 
+app-product-card {
+  max-width: 25%;
+}
+
+mat-spinner {
+  margin-top: 60px;
+}
+
+.go-back {
+  background-color: white;
+  color: black;
+  border: none;
+  margin: 20px;
+  font-size: 16px;
+  padding: 15px 25px;
+  transition: 0.5s;
+}
+
+.go-back:hover {
+  cursor: pointer;
+  background-color: lightgray;
+  transition: 0.5s;
 }

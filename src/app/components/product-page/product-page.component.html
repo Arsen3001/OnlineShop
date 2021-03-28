@@ -1,11 +1,14 @@
-<button routerLink="/">GO BACK</button>
+<mat-spinner *ngIf='loader' color='primary'></mat-spinner>
+<div *ngIf='!loader'>
+<button class="go-back" routerLink="/">GO BACK</button>
 <div class="product">
     <img src="{{mainLink}}{{product.image}}" alt="ss">
     <div class="column">
         <div class="info">
             <h3>{{product.name | uppercase}}</h3>
         </div>
-        <div class="info">
+        <div class="info stars">
+            <app-stars-review [product]='product'></app-stars-review>
             <span>{{product.numReviews}} reviews</span>
         </div>
         <div class="info">
@@ -35,3 +38,4 @@
     </div>
 </div>
 <app-review [product]='product'></app-review>
+</div>

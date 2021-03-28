@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ShopInterfaces } from 'src/app/interfaces/shop-interfaces';
 import { ShopServiceService } from 'src/app/services/shop-services.service';
 
 @Component({
@@ -8,17 +8,15 @@ import { ShopServiceService } from 'src/app/services/shop-services.service';
   styleUrls: ['./slider.component.scss'],
 })
 export class SliderComponent implements OnInit {
-  topProducts: any[] = [];
+  topProducts: ShopInterfaces[] = [];
   mainLink = this.shopService.mainLink;
-  loader = true;  
-  constructor(private http: HttpClient, private shopService: ShopServiceService) { }
+  loader = true;
+  constructor(private shopService: ShopServiceService) { }
 
   ngOnInit(): void {
-   this.shopService.getTopProduts().subscribe((res: any[]) => {
+   this.shopService.getTopProduts().subscribe((res: ShopInterfaces[]) => {
     this.topProducts = res;
     this.loader = false;
-    } );
-
-    
+  });
   }
 }

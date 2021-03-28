@@ -1,5 +1,5 @@
 <mat-spinner *ngIf='loader' color='primary'></mat-spinner>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" *ngIf='!loader'>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel " *ngIf='!loader'>
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -7,7 +7,7 @@
     </ol>
     <div class="carousel-inner w-100">
         <div class="carousel-item" [ngClass]='{active: i===0}' *ngFor='let product of topProducts; let i = index'>
-            <h2>{{product.name}}</h2>
+            <h2>{{product.name | uppercase}} </h2>
             <img class="d-block product" src="{{mainLink}}{{product.image}}" alt="First slide">
         </div>
     </div>

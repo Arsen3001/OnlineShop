@@ -1,5 +1,16 @@
 :hover {
   cursor: pointer;
-  text-decoration: none;
+}
+
+.active {
   background-color: black;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.page {
+  padding: 5px 10px;
 }

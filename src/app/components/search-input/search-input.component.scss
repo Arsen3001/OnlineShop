@@ -6,7 +6,6 @@ button {
   color: #4bbf73;
   background-color: #343a40;
   font-size: 12px;
-  font-family: 'Nunito Sans', sans-serif;
   font-weight: bold;
   align-items: center;
   text-align: center;
@@ -29,7 +28,6 @@ input {
 }
 
 .search-input {
-  // margin-top: 25px;
   height: 100%;
   align-items: center;
   text-align: center;
@@ -37,5 +35,5 @@ input {
 
 ::placeholder {
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 80%;
 }
