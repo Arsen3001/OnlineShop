@@ -27,6 +27,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { BasketListComponent } from './components/basket-list/basket-list.component';
 import { SubtotalComponent } from './components/subtotal/subtotal.component';
 import { ItemProductListComponent } from './components/item-product-list/item-product-list.component';
+import { StarsReviewComponent } from './components/stars-review/stars-review.component';
 
 
 
@@ -52,6 +53,7 @@ import { ItemProductListComponent } from './components/item-product-list/item-pr
     BasketListComponent,
     SubtotalComponent,
     ItemProductListComponent,
+    StarsReviewComponent,
   ],
   imports: [
     BrowserModule,

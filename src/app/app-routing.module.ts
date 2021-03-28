@@ -7,11 +7,11 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { SignInComponent } from './components/sign-in/sign-in.component';
 
 const routes: Routes = [
-  {path:"", component: StartPageComponent},
-  {path:"search", component: SearchComponent},
-  {path:"product-page/:id", component: ProductPageComponent},
-  {path:"basket", component: BasketComponent},
-  {path:"sign-in", component: SignInComponent},
+  {path: '', component: StartPageComponent},
+  {path: 'search/:keyword', component: SearchComponent},
+  {path: 'product-page/:id', component: ProductPageComponent},
+  {path: 'basket', component: BasketComponent},
+  {path: 'sign-in', component: SignInComponent},
 ];
 
 @NgModule({
