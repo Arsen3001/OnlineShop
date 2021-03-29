@@ -8,6 +8,7 @@ import { IPage, ShopInterfaces } from '../interfaces/shop-interfaces';
 })
 export class ShopServiceService {
 signInSubject = new Subject();
+searchClean = new Subject();
 mainLink = 'https://nodejs-final-mysql.herokuapp.com';
   constructor(private http: HttpClient) {}
 

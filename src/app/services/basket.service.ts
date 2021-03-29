@@ -53,6 +53,8 @@ this.sum = 0;
 this.checkItem();
 this.products.forEach(item => {
     this.sum += item.product.price * item.quantity;
+    this.count = parseInt(`${this.count}`, 10);
+    item.quantity = parseInt(`${item.quantity}`, 10);
     this.count += item.quantity;
 });
 this.subtotalSubj.next(this.sum);

@@ -32,11 +32,12 @@ export class SignInComponent implements OnInit {
     }
 
     this.notification = false;
-    localStorage.setItem('admin', this.f.email.value);
     console.log(this.f);
     if (this.f.email.value === 'admin@gmail.com' && this.f.password.value === 'admin') {
+      localStorage.setItem('admin', JSON.stringify ({ email: this.f.email.value, role: 'admin'}));
       this.shopServices.signInSubject.next('ADMIN');
     } else {
+      localStorage.setItem('admin', JSON.stringify ({ email: this.f.email.value, role: 'user'}));
       this.shopServices.signInSubject.next('SIGN IN');
     }
   }

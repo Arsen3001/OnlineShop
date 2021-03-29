@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IPage, ShopInterfaces } from 'src/app/interfaces/shop-interfaces';
 import { ShopServiceService } from 'src/app/services/shop-services.service';
@@ -9,7 +9,7 @@ import { ShopServiceService } from 'src/app/services/shop-services.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, OnDestroy {
   products: ShopInterfaces[] = [];
   loader = true;
   constructor(private shopService: ShopServiceService, private activatedRoute: ActivatedRoute ) { }
@@ -21,5 +21,8 @@ export class SearchComponent implements OnInit {
         this.loader = false;
       });
     });
+  }
+  ngOnDestroy(): void {
+    this.shopService.searchClean.next('');
   }
 }

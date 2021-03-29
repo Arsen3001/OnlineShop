@@ -14,6 +14,13 @@ export class NavComponent implements OnInit {
     this.shopServices.signInSubject.subscribe((res: any) => {
       this.sign = res;
     });
+    if (JSON.parse(`${localStorage.getItem('admin')}`) && JSON.parse(`${localStorage.getItem('admin')}`).role === 'admin')
+{
+      this.sign = 'ADMIN';
+
+    } else {
+      this.sign = 'SIGN IN';
+    }
   }
 
 }
